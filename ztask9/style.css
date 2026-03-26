@@ -1,0 +1,55 @@
+body{
+    background:#ddd;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.carousel{
+    width:700px;
+    height:350px;
+    background:#06353c;
+    color:white;
+    padding:40px;
+    border-radius:8px;
+    position:relative;
+}
+
+.slide{
+    display:none;
+}
+
+.slide.active{
+    display:block;
+}
+
+.slide h2{
+    font-size:32px;
+}
+
+.slide p{
+    margin:20px 0;
+}
+
+.timeline{
+    position:absolute;
+    bottom:30px;
+    width:40%;
+    display:flex;
+    gap:20px;
+}
+
+.bar{
+    flex:1;
+    border-radius: 20px;
+    height:4px;
+    background:rgba(255,255,255,0.3);
+}
+
+.progress{
+    height:100%;
+    width:0%;
+    border-radius: 20px;
+    background:white;
+}

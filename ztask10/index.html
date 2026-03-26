@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <table id="salesTable">
+        <thead id="salesTableHead">
+           
+        </thead>
+        <tbody id="salesTableBody"></tbody>
+    </table>
+    
+    <div id="overlay"></div>
+
+    <form id="formContainer">
+    
+        <h3>Add Product</h3>
+    
+        
+        <label>Product:</label>
+        <select id="productSelect">
+            <option value="Laptop">Laptop</option>
+            <option value="Mouse">Mouse</option>
+            <option value="Keyboard">Keyboard</option>
+            <option value="Monitor">Monitor</option>
+        </select>
+        <br><br>
+    
+      
+        <label>Quantity:</label>
+        <button id="decreaseBtn" type="button">-</button>
+        <input type="number" id="quantityInput" value="1" min="1" style="width:40px;">
+        <button id="increaseBtn" type="button">+</button>
+        <br><br>
+    
+      
+        <button id="submitBtn" type="button">Add</button>
+    
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

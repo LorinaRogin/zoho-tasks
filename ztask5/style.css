@@ -1,0 +1,755 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    section {
+        margin-bottom: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        margin-bottom: 60px;
+    }
+}
+
+.content-wrap {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.banner {
+    text-align: center;
+    color: white;
+    background-color: #201B18;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    overflow: hidden;
+}
+
+.banner button {
+    background-color: #E42527;
+    color: white;
+    padding: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+
+}
+
+
+.banner-card {
+    position: relative;
+    margin-top: 60px;
+    margin-right: auto;
+}
+
+.bg-image {
+    position: absolute;
+    top: -150px;
+    transform: translateX(-50%);
+    width: 140%;
+
+}
+
+.main-image {
+    position: relative;
+    width: 100%;
+    display: block;
+    border-radius: 29px 29px 0px 0px;
+    border: 1px solid white;
+    padding: 10px;
+    box-shadow: 0px 0px 15px #959595 inset;
+}
+
+.brand-carousal {
+    overflow: hidden;
+    padding: 40px 0;
+    background-color: #F8F9FC;
+}
+
+.brands ul {
+    display: flex;
+    gap: 80px;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    animation-name: carousal;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transition: transform ease;
+}
+
+@keyframes carousal {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.count-outer {
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+    padding: 1px;
+    background-image: linear-gradient(210deg, #4561ff 9%, rgba(255, 255, 255) 57% 68%);
+    box-shadow: rgba(89, 48, 255, 0.07) 0 4px 9px 0;
+    border-radius: 16px;
+}
+
+.count-box {
+    background: white;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.count-box ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 30px;
+}
+
+.Key-Enterprise-Data-Challenges-text-content {
+    text-align: center;
+    position: relative;
+}
+
+.Key-Enterprise-Data-Challenges-text-content p {
+    font-size: 18px;
+
+}
+
+.Key-Enterprise-Data-Challenges-bg img {
+    width: 100%;
+
+}
+
+.Key-Enterprise-Data-Challenges-analytics img {
+    position: absolute;
+    top: 120px;
+    left: 23%;
+    animation-name: scale;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    transition: ease;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.card,
+.scroll-card-two {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+.card-one {
+    background-color: white;
+    text-align: left;
+    padding: 1px;
+    position: absolute;
+    top: 200px;
+    left: 15%;
+    background-image: linear-gradient(210deg, #4561ff 9%, rgba(255, 255, 255) 57% 68%);
+    box-shadow: rgba(89, 48, 255, 0.07) 0 4px 9px 0;
+    border-radius: 16px;
+}
+
+.card-content {
+    background: white;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.card-two {
+    background-color: white;
+    text-align: left;
+    padding: 1px;
+    position: absolute;
+    top: 230px;
+    left: 65%;
+    background-image: linear-gradient(210deg, #4561ff 9%, rgba(255, 255, 255) 57% 68%);
+    box-shadow: rgba(89, 48, 255, 0.07) 0 4px 9px 0;
+    border-radius: 16px;
+}
+
+.card-three {
+    background-color: white;
+    text-align: left;
+    padding: 1px;
+    position: absolute;
+    top: 600px;
+    left: 10%;
+    background-image: linear-gradient(210deg, #4561ff 9%, rgba(255, 255, 255) 57% 68%);
+    box-shadow: rgba(89, 48, 255, 0.07) 0 4px 9px 0;
+    border-radius: 16px;
+}
+
+.card-four {
+    background-color: white;
+    text-align: left;
+    padding: 1px;
+    position: absolute;
+    top: 600px;
+    left: 70%;
+    background-image: linear-gradient(210deg, #4561ff 9%, rgba(255, 255, 255) 57% 68%);
+    box-shadow: rgba(89, 48, 255, 0.07) 0 4px 9px 0;
+    border-radius: 16px;
+}
+
+.Data-Integration-Quality {
+    text-align: center;
+    padding: 50px;
+}
+
+.Data-Integration-Quality h1 {
+    margin-top: 80px;
+}
+
+.Data-Integration-Quality p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.scroll-section {
+    /* padding: 100px 0; */
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    background-color: #FCFAFF;
+    border: 1px solid #9E77ED;
+    box-shadow: 0px 5px 10px #7F56D933;
+    padding: 50px;
+    justify-content: space-between;
+    border-radius: 20px;
+    position: sticky;
+    gap: 30px;
+    min-height: 350px;
+}
+
+.card:nth-child(1) {
+    z-index: 1;
+    top: 100px;
+}
+
+.card:nth-child(2) {
+    z-index: 2;
+    top: 120px;
+}
+
+.card:nth-child(3) {
+    z-index: 3;
+    top: 140px;
+}
+
+.card:nth-child(4) {
+    z-index: 4;
+    top: 160px;
+}
+
+.left-wrapper,
+.right-wrapper {
+    flex: 1;
+}
+
+.left-wrapper {
+    text-align: left;
+
+}
+
+.right-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-wrapper img {
+    width: 100%;
+}
+
+.Data-Governance-Security-Compliance {
+    background-color: #201B18;
+    color: white;
+    text-align: center;
+    background-image: url(cardbg.png);
+    background-position: center;
+    padding:50px;
+
+}
+
+.title h1 {
+    background: linear-gradient(25deg, #FF6F00, #FFC2A9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title p {
+    font-size: 18px;
+}
+
+
+
+.image-wrapper {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+}
+
+.image-card {
+    background-color: #201B18;
+    border: 1px solid;
+    border-radius: 18px;
+    border-color: rgb(255 221 178 / 30%);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: space-between;
+    flex: 1;
+    z-index: 1;
+    box-shadow: 0 0 55.5px 0 rgba(197, 185, 246, 0.15) inset;
+    animation: lift 0.8s ease forwards;
+    opacity: 0;
+}
+
+@keyframes lift {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card-image img {
+    width: 100%;
+}
+
+.Growing-data-needs {
+    text-align: center;
+    background-color: #F8F9FC;
+    padding: 100px;
+}
+
+.icon-card-wrap {
+    display: flex;
+    gap: 20px;
+}
+
+.icon-card-one {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    gap: 30px;
+    align-items: center;
+
+}
+
+.icon-content h3 {
+    background: linear-gradient(25deg, #008EF5, #9914FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.Adoption-Usability-Barriers {
+    text-align: center;
+}
+
+.scroll-section-two {
+    padding: 100px 0;
+}
+
+.scroll-card-two {
+    display: flex;
+    align-items: center;
+    background-color: #FCFAFF;
+    border: 1px solid #9E77ED;
+    box-shadow: 0px 5px 10px #7F56D933;
+    padding: 50px;
+    justify-content: space-between;
+    border-radius: 20px;
+    position: sticky;
+    gap: 30px;
+    min-height: 350px;
+}
+
+.scroll-card-two:nth-child(1) {
+    z-index: 1;
+    top: 100px;
+}
+
+.scroll-card-two:nth-child(2) {
+    z-index: 2;
+    top: 120px;
+}
+
+.scroll-card-two:nth-child(3) {
+    z-index: 3;
+    top: 140px;
+}
+
+
+
+.left-wrap,
+.right-wrap {
+    flex: 1;
+}
+
+.left-wrap {
+    text-align: left;
+}
+
+.left-wrap h2 {
+    background-image: linear-gradient(25deg, #008EF5, #9914FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.right-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-wrap img {
+    width: 100%;
+   
+}
+
+.Go-To-Enterprise-Analytics-Software {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background-color: #231D1A;
+    background-image: linear-gradient(to left bottom, #FFDDB200, #231D1A, #FFDDB24D);
+}
+
+.Go-To-Enterprise-Analytics-Software h1 {
+    background-image: linear-gradient(25deg, #FF6F00, #FFC2A9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.box-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.box-card {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 40px;
+    border-radius: 18px;
+    background-color: #1f1a17;
+    color: white;
+    text-align: left;
+    box-shadow: 0 0 55.5px 0 rgba(197, 185, 246, 0.15) inset;
+}
+
+/* Make inner sections equal */
+.box-image,
+.box-content {
+    flex: 1;
+}
+
+.box-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.box-card-1 {
+    flex: 0 0 93%;
+}
+
+.box-card-2,
+.box-card-3 {
+    flex: 1;
+    flex-direction: column;
+}
+
+.boxes {
+    display: flex;
+    gap: 20px;
+
+}
+
+.box-card-4,
+.box-card-5 {
+    flex: 1;
+    flex-direction: column;
+
+}
+
+.alternate-wrapper {
+    display: flex;
+    padding: 90px 0px;
+
+
+}
+
+.alt-left-wrap {
+    flex: 1;
+}
+
+.alt-left-wrap img {
+    border-radius: 70px;
+    position: relative;
+    z-index: 1;
+    top: 150px;
+    left: 20px;
+}
+
+.alt-right-wrap {
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: #048af5;
+    border-radius: 70px;
+    padding: 20px 20px 50px 120px;
+    position: relative;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    left: -50px;
+    z-index: 0;
+    box-shadow: 0 4px 11.2px 0 rgba(89, 48, 255, 0.10);
+}
+
+.Global-Partner-network {
+    margin-top: 50px;
+    padding: 100px;
+    text-align: center;
+    background-color: #F8F9FC;
+}
+
+.Global-Partner-network span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Global-Partner-network a {
+    text-decoration: none;
+    color: #03a9f5;
+}
+
+.Global-Partner-network img {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.Enterprise-Grade-Analytics-Built-for-Growth {
+    text-align: center;
+    padding: 100px;
+}
+
+button {
+    background-color: #E42527;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Responsive layout - laptop / large tablet */
+@media (max-width: 1200px) {
+    .banner {
+        padding: 60px 0;
+    }
+
+    .banner-card {
+        margin-bottom: -60px;
+    }
+
+    @media (max-width: 1200px) {
+        .Key-Enterprise-Data-Challenges-analytics img {
+            width: 60%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+/* Responsive layout - tablet */
+
+@media (max-width: 992px) {
+
+    .card,
+    .scroll-card-two {
+        flex-direction: row;
+        padding: 30px;
+    }
+
+    @media (max-width: 992px) {
+
+        .image-wrapper,
+        .icon-card-wrap,
+        .boxes {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 40px;
+        }
+    }
+
+    .box-card-2,
+    .box-card-3,
+    .box-card-4,
+    .box-card-5 {
+        flex-direction: row;
+        flex: 0 0 100%;
+    }
+
+    .card-one,
+    .card-two,
+    .card-three,
+    .card-four {
+        margin: 15px auto;
+        display: block;
+        max-width: 420px;
+    }
+
+    .Key-Enterprise-Data-Challenges-bg img {
+        margin-bottom: 40px;
+    }
+
+
+
+    .Growing-data-needs,
+    .Global-Partner-network,
+    .Enterprise-Grade-Analytics-Built-for-Growth,
+    .Adoption-Usability-Barriers,
+    .Data-Integration-Quality,
+    .Data-Governance-Security-Compliance {
+        padding: 60px 20px;
+    }
+}
+
+/* Responsive layout - phone */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .content-wrap {
+        width: 94%;
+    }
+
+    .banner {
+        padding: 40px 0 60px;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+
+    .banner h1 {
+        font-size: 24px;
+    }
+
+    .banner p {
+        font-size: 14px;
+    }
+
+    .banner-card {
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: -40px;
+    }
+
+    .bg-image {
+        top: -80px;
+        width: 180%;
+    }
+
+    .brands ul {
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .count-box ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .scroll-section,
+    .scroll-section-two {
+        padding: 60px 0;
+    }
+
+    .card,
+    .scroll-card-two {
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .right-wrapper img,
+    .right-wrap img {
+        height: auto;
+    }
+
+    .icon-card-one {
+        padding: 10px;
+    }
+
+    .box-card {
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .box-card-1 {
+        flex: 0 0 100%;
+    }
+
+    .Global-Partner-network img {
+        margin-top: 20px;
+    }
+
+    .alternate-wrapper {
+        padding: 40px 0;
+    }
+
+    .alt-right-wrap {
+        padding: 30px 20px;
+    }
+
+    .Enterprise-Grade-Analytics-Built-for-Growth button,
+    .banner button {
+        width: 100%;
+    }
+}

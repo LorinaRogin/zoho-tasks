@@ -1,0 +1,20 @@
+h1{
+    margin:20px;
+}
+select{
+    margin:20px;
+    padding:5px;
+    border:none;
+    font-size:19px;
+    cursor: pointer;
+}
+option{
+    border:none;
+}
+img{
+    width:100px;
+}
+div{
+   
+    margin:20px;
+}

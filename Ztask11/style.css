@@ -1,0 +1,36 @@
+.content {
+    display: none;
+  }
+  #content1{
+    background-color: pink;
+    width:200px;
+    padding:20px;
+    border-radius: 10px;
+  }
+  #content2{
+    background-color: lightgreen;
+    width:200px;
+    padding:20px;
+    border-radius: 10px;
+  }
+  #content3{
+    background-color:lightsalmon;
+    width:200px;
+    padding:20px;
+    border-radius: 10px;
+  }
+  .tabs{
+    display:flex;
+  }
+  .contents{
+    margin-top:50px;
+  }
+  .btn{
+    border:none;
+    padding:20px;
+  }
+  .btn:hover{
+    background-color: black;
+    color:white;
+    border:none;
+  }
