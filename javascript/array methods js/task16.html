@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [4, 7, 2, 9, 5];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > 5) {
+                console.log(arr[i]);
+            }
+        }
+        // 
+        let arr1 = [3, 8, 12, 5, 7, 10];
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] % 2 === 0) {
+                console.log(arr1[i]);
+            }
+        }
+        // 
+        let arr2 = [4, 9, 2, 11, 6, 3];
+        let newarr = [];
+        for (let i = 0; i < arr2.length; i++) {
+            if (arr2[i] % 2 === 0) {
+                newarr.push(arr2[i]);
+            }
+        }
+        console.log(newarr);
+
+        // 
+        let arr3 = [5, 12, 8, 21, 16, 3];
+        let even = [];
+        let odd = [];
+        for (let i = 0; i < arr3.length; i++) {
+            if (arr3[i] % 2 === 0) {
+                even.push(arr3[i]);
+            }
+            else {
+                odd.push(arr3[i]);
+            }
+
+        }
+        console.log("Even : ", even);
+        console.log("Odd : ", odd);
+        // 
+        let arr4 = [10, 25, 30, 7, 50, 3, 40];
+        let result = [];
+        for(let i = 0; i < arr4.length ; i++){
+            if(arr4[i] % 10 === 0){
+                result.push(arr4[i]);
+            }
+        }
+        console.log("Result: ", result);
+        // 
+        let arr5 = [5, 12, 7, 18, 3, 20];
+        let sum = 0;
+        for (let i = 0 ; i<arr5.length ; i++){
+            if(arr5[i] > 10){
+                sum = sum + arr5[i];
+            }
+        }
+        console.log(sum);
+
+        // 
+        let arr6 = [4, 9, 2, 11, 6, 3];
+        let evenSum = 0;
+        let oddSum = 0;
+        for(let i = 0; i < arr6.length ; i++){
+            if(arr6[i] % 2 === 0){
+                evenSum = evenSum + arr6[i];
+            }
+            else{
+                oddSum = oddSum + arr6[i];
+            }
+
+        }
+        console.log(evenSum);
+        console.log(oddSum);
+        // 
+        let arr7 = [10, 5, 20, 8, 25, 30];
+        bigNumbers = [];
+        smallNumbers = [];
+        for (let i = 0 ; i < arr7.length ; i++){
+            if(arr7[i] > 15 ){
+                bigNumbers.push(arr7[i]);
+            }
+            else if (arr7[i] <= 15){
+                smallNumbers.push(arr7[i]);
+            }
+            else{
+                console.log("Invalid");
+            }
+        }
+        console.log("Big Numbers : ", bigNumbers);
+        console.log("Small Numbers : ", smallNumbers);
+    </script>
+</body>
+
+</html>

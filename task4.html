@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-column layout</title>
+    <style>
+        .container{
+            display: flex;
+            margin: 0%;
+        }
+        .left{
+            width:30%;
+            height:200px;
+            background-color: deeppink;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .right{
+            width:70%;
+            height:200px;
+            background-color: darkblue;
+            color:white;
+            border-radius: 10px;
+            margin-left: 10px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="left">
+            <h1>LEFT</h1>
+        </div>
+        <div class="right">
+            <h1>RIGHT</h1>
+        </div>
+    </section>
+</body>
+</html>

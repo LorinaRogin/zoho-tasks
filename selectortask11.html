@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button:hover {
+            background-color: green;
+        }
+
+        li:first-child {
+            color: red;
+        }
+
+        li:last-child {
+            color: yellow;
+        }
+
+        li:nth-child(2) {
+            color: pink;
+        }
+
+        p::before {
+            content: "🔥";
+        }
+
+        p::after {
+            content: "🌏";
+        }
+
+        p::first-letter {
+            color: red;
+            font-size: 100px;
+        }
+
+        a {
+            color: blue;
+        }
+
+        a:visited {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Click me</button>
+    <ul>
+        <li>apple</li>
+        <li>litchi</li>
+        <li>banana</li>
+    </ul>
+    <p>Hello World</p>
+    <a href="#">Visit</a>
+</body>
+
+</html>

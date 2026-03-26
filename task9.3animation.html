@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height:100vh;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div{
+        
+            animation-name: text;
+            animation-duration: 3s;
+            animation-timing-function: ease-out;
+            animation-iteration-count: 2;
+        }
+        @keyframes text{
+            0%{
+                transform: translateY(40px);
+                opacity:0;
+            }
+            100%{
+                transform:translateY(0px);
+                opacity: 1;
+                color:hotpink;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div><h1>HELLO</h1></div>
+</body>
+</html>

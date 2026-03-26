@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+        body{
+            box-sizing: border-box;
+        }
+        .container{
+            display:flex;
+            gap:20px;
+            flex-wrap: wrap;
+
+        }
+        .card{
+            flex:1;
+            background-color: darkgrey;
+            border-radius: 10px;
+            padding:5px;
+            
+        }
+        @media(max-width:767px){
+            .card{
+                background-color: pink;
+                
+            }
+            h1{
+                font-size: medium;
+            }
+        }
+        @media(max-width:565px){
+            .card{
+                background-color: lightblue;
+                width:20%;
+            }
+            
+        }
+        @media(max-width:480px){
+            .container{
+                padding:50px 0px;
+            }
+            .card{
+                background-color: plum;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-bottom: 20px;
+                
+            }
+        }
+        @media(max-width:350px){
+            .card{
+                background-color: greenyellow;
+                border:1px solid darkgreen;
+                
+
+            }
+            p{
+                font-weight:bold;
+                font-size:xx-small;
+                
+            }
+        }
+        @media(max-width:166px){
+            .card{
+                color:crimson;
+                background-color: cornsilk;
+                font-style: italic;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>One</h1>
+            <p>Apple</p>
+
+        </div>
+        <div class="card">
+            <h1>Two</h1>
+            <p>Balls</p>
+
+        </div>
+        <div class="card">
+            <h1>Three</h1>
+            <p>Cats</p>
+        </div>
+        <div class="card">
+            <h1>Four</h1>
+            <p>Dogs</p>
+        </div>
+        <div class="card">
+            <h1>Five</h1>
+            <p>Fishes</p>
+        </div>
+        <div class="card">
+            <h1>Six</h1>
+            <p>Guns</p>
+        </div>
+        <div class="card">
+            <h1>Seven</h1>
+            <p>Horses</p>
+        </div>
+        <div class="card">
+            <h1>Eight</h1>
+            <p>Icecreams</p>
+        </div>
+        <div class="card">
+            <h1>Nine</h1>
+            <p>Jugs</p>
+        </div>
+        <div class="card">
+            <h1>Ten</h1>
+            <p>Kites</p>
+        </div>
+    </div>
+</body>
+
+</html>

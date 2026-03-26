@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .container{
+            display:flex;
+            flex-direction: column;
+            height:10px;
+        }
+        .box{
+            height:100px;
+            border: 1px solid black;
+        }
+        .box-one{
+            flex:1;
+        }
+        .box-two{
+            flex:1;
+        }
+        .box-three{
+            flex:2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box-one">ONE</div>
+        <div class="box-two">TWO</div>
+        <div class="box-three">THREE</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // object
+        let student = {
+            name: "Alex",
+            age: 22,
+            course: "Computer Science"
+        };
+        console.log(student.name + " is studying " + student.course);
+        student.grade = "A";
+        console.log(student);
+
+        // 
+        let employees = [
+            { id: 1, name: "John" },
+            { id: 2, name: "Emma" },
+            { id: 3, name: "Alex" }
+        ]
+        console.log(employees[1].name);
+        // 
+        let products = [
+            { name: "Laptop", price: 1000 },
+            { name: "Phone", price: 500 },
+            { name: "Tablet", price: 300 }
+        ]
+        let names = products.map(product => product.name);
+        console.log(names);
+
+        // 
+        let product_list = [
+            { name: "Laptop", price: 1000 },
+            { name: "Phone", price: 500 },
+            { name: "Tablet", price: 300 }
+        ];
+        let name = product_list.filter(item => item.price > 400);
+        console.log(name);
+    </script>
+</body>
+
+</html>

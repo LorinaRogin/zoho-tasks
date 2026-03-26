@@ -1,0 +1,33 @@
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    flex-direction: column;
+    gap:20px;
+}
+.buttons{
+    display:flex;
+    gap:30px;
+}
+#photo{
+    width:200px;
+    height:250px;
+    border: 1px solid black;
+    cursor:pointer;
+
+}
+#dots{
+    display:flex;
+    gap:20px;
+}
+.dot{
+    width:12px;
+    height:12px;
+    background-color: gray;
+    border-radius: 50%;
+    cursor:pointer;
+}
+.active{
+    background-color: black;
+}

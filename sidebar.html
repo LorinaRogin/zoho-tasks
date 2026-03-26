@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side bar layout</title>
+    <style>
+        body {
+            margin: 0%;
+            height: 100vh;
+            display: flex;
+        }
+
+        .side-bar {
+            background-color: black;
+            width: 220px;
+            padding: 20px;
+        }
+
+        .content {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        li {
+            color: white;
+            list-style: none;
+        }
+
+        li:hover {
+            background: #222;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+
+
+        }
+
+        .card {
+            background-color: greenyellow;
+            flex: 1 1 250px;
+            border-radius: 10px;
+            padding:15px;
+        }
+        @media(max-width:820px){
+            .card{
+                background-color: pink;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="side-bar">
+        <ul>
+            <li>apple</li>
+            <li>mango</li>
+            <li>banana</li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Welcome</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error asperiores doloremque nesciunt soluta nulla
+            non unde quas et ad consectetur!</p>
+
+        <div class="card-container">
+           
+            <div class="card">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellendus ad exercitationem praesentium dolor error placeat!</p>
+            </div>
+            <div class="card">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellendus ad exercitationem praesentium dolor error placeat!</p>
+            </div>
+            <div class="card">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellendus ad exercitationem praesentium dolor error placeat!</p>
+            </div>
+            <div class="card">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellendus ad exercitationem praesentium dolor error placeat!</p>
+            </div>
+            <div class="card">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellendus ad exercitationem praesentium dolor error placeat!</p>
+            </div>
+            <div class="card">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellendus ad exercitationem praesentium dolor error placeat!</p>
+            </div>
+            <div class="card">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellendus ad exercitationem praesentium dolor error placeat!</p>
+            </div>
+            <div class="card">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repellendus ad exercitationem praesentium dolor error placeat!</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

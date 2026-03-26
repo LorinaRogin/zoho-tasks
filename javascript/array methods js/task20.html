@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // squares of numbers
+        let numbers = [2, 4, 6, 8];
+        numbers.forEach((item => console.log(item ** 2)));
+
+        // print name lengths
+        let names = ["John", "Emma", "Alexander"];
+        names.forEach((name) => {
+            console.log(name.length);
+        });
+
+        // add $ 
+        let prices = [10, 20, 30];
+        prices.forEach((price) => console.log("$" + price));
+
+        // sentence
+        let users = [
+            { name: "John", age: 25 },
+            { name: "Emma", age: 30 },
+            { name: "Alex", age: 22 }
+        ];
+        users.forEach((user) => console.log(user.name + " is " + user.age + " years old "));
+        users.forEach((user) => console.log(user.name));
+
+        // map tasks
+        // double the number
+        let nums = [5, 10, 15];
+        let num = nums.map((num) => num * 2);
+        console.log(num);
+        // add hello 
+        let empnames = ["John", "Emma", "Alex"];
+        let greetings = empnames.map((name) => "Hello " + name);
+        console.log(greetings);
+        // create an array consisting of product names only
+        let products = [
+            { name: "Laptop", price: 1000 },
+            { name: "Phone", price: 500 },
+            { name: "Tablet", price: 300 }
+        ];
+        let pname = products.map((device) => device.name);
+        console.log(pname);
+
+        // filter ()
+        // prices > 100
+        let prices1 = [100, 250, 80, 500, 60];
+        let amount = prices1.filter((price) => price > 100);
+        console.log(amount);
+
+        // even numbers
+        let number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let even = number.filter((num) => num % 2 === 0);
+        console.log("Even numbers : ", even);
+
+        // map () + filter()
+        let user_names = [
+            { name: "John", age: 25 },
+            { name: "Emma", age: 17 },
+            { name: "Alex", age: 30 }
+        ];
+        let user = user_names.filter(item => item.age >= 18)
+            .map(item => item.name);
+        console.log(user);
+
+        // 
+
+        let product = [
+            { name: "Laptop", price: 1000 },
+            { name: "Phone", price: 500 },
+            { name: "Tablet", price: 300 },
+            { name: "Monitor", price: 700 }
+        ];
+        let p_name = product.filter((item) => item.price > 400)
+            .map((item) => item.name);
+        console.log(p_name);
+        //    reduce()
+
+        let list = [10, 20, 30, 40];
+        let numb = list.reduce((num) => num);
+        console.log(numb);
+
+        // 
+        console.log(0 == false);
+        console.log(typeof []);
+
+        // find()
+        let employees = [
+            { id: 1, name: "John" },
+            { id: 2, name: "Emma" },
+            { id: 3, name: "Alex" },
+            { id: 4, name: "Sophia" }
+        ];
+        let name = employees.find((f) => f.id === 3);
+        console.log(name);
+
+    </script>
+</body>
+
+</html>

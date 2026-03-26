@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [10, 20, 30, 40, 50];
+        let str = arr.toString();
+        console.log(str);
+        // join()
+        let arr1 = [10, 20, 30, 40, 50];
+        console.log(arr1.join("-"));
+        console.log(arr1.join(" "));
+        console.log(arr1.join(" * "));
+        // at()
+        let fruits = ["Apple", "Mango", "Banana", "Orange", "Pineapple"];
+        console.log(fruits.at(0));
+        console.log(fruits.at(-1));
+        console.log(fruits.at(2));
+        console.log(fruits.at(-2));
+        // isArray()
+        let numbers = [10, 20, 30];
+        let name = "Divya";
+        console.log(Array.isArray(numbers));
+        console.log(Array.isArray(name));
+        // flat()
+        let arr2 = [1, 2, [3, 4, [5, 6]], 7];
+        console.log(arr2.flat());
+        console.log(arr2.flat(2));
+        // concat()
+        let tech1 = ["HTML", "CSS"];
+        let tech2 = ["JS", "React"];
+        let techlist = tech1.concat(tech2, "Node", "MongoDB");
+        console.log(techlist);
+        // copyWithin()
+        let arr3 = [10, 20, 30, 40, 50];
+        console.log(arr3.copyWithin(0, 3));
+        // slice()
+        let arr4 = [5, 10, 15, 20, 25, 30];
+        console.log("new array: ", arr4.slice(2, 5));
+        console.log("original array: ", arr4);
+        // tospliced()
+        let arr5 = [1, 2, 3, 4, 5, 6];
+        let newarr = arr5.toSpliced(2, 2, 10, 20);
+        console.log("new array : ", newarr);
+        console.log("original array : ", arr5);
+        // includes()
+        let tech = ["HTML", "CSS", "JavaScript", "React"];
+        console.log(tech.includes("React"));
+        // indexOf()
+        console.log(tech.indexOf("JavaScript"));
+        // both includes() and indexOf()
+        let fruitlist = ["Apple", "Mango", "Banana", "Orange"];
+        console.log(fruitlist.includes("Banana"));
+        console.log(fruitlist.indexOf("Orange"));
+        //
+        let techs = ["HTML", "CSS", "JavaScript", "React", "Node"];
+        console.log(techs.includes("React"));
+        console.log(techs.indexOf("JavaScript"));
+        console.log(techs.includes("Angular"));
+        // 
+        let fruitslist = ["Apple", "Mango", "Banana", "Orange", "Pineapple"];
+        console.log(fruitslist.indexOf("Mango"));
+        console.log(fruitslist.includes("Apple"));
+        console.log(fruitslist.includes("Grapes"));
+        console.log(fruitslist.indexOf("Pineapple"));
+        // foreach()
+        let fruit = ["Apple", "Mango", "Banana", "Orange"];
+        fruit.forEach(function (list) {
+            console.log(list);
+        }
+        );
+        //
+        let num = [5, 12, 18, 7, 25];
+        num.forEach(function (item) {
+            if (item > 15) {
+                console.log(item);
+            }
+        }
+        );
+        // 
+        let num1 = [3, 8, 11, 20, 7, 14];
+        let even = [];
+
+        num1.forEach(function (items) {
+            if (items % 2 == 0) {
+                even.push(items);
+            }
+        });
+
+        console.log(even);
+    //    
+  
+    </script>
+
+
+</body>
+
+</html>

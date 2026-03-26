@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        .A {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            z-index: 2;
+
+
+        }
+
+        .B {
+            position: sticky;
+            top: 0%;
+            left: 10%;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 0, 217);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="A">
+        <p>Hello</p>
+    </div>
+    <div class="B">
+        <p>Bye</p>
+    </div>
+</body>
+
+</html>

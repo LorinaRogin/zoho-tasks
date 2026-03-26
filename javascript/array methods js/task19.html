@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // print numbers
+        let numbers = [3, 6, 9, 12, 15];
+        numbers.forEach((num) => {
+            console.log(num);
+        });
+
+        // print double of each number.
+        let num1 = [2, 4, 6, 8];
+        num1.forEach((num) => console.log(num * 2));
+
+        // print only even numbers.
+        let num2 = [5, 8, 11, 14, 17, 20];
+        num2.forEach((num) => {
+            if (num % 2 === 0) {
+                console.log(num);
+            }
+        });
+
+        // Create a new array
+        let num3 = [1, 3, 5, 7];
+        let result = [];
+        num3.forEach((num) =>
+            result.push(num + 5));
+        console.log(result);
+
+        // map 
+        // Convert numbers to string
+        let num4 = [1, 2, 3, 4];
+        let output = num4.map(num => "Number " + num);
+        console.log(output);
+
+        // Convert names to uppercase
+        let names = ["john", "emma", "alex"];
+        let uppernames = names.map(name => name.toUpperCase());
+        console.log(uppernames);
+
+        // 
+        let users = [
+            { name: "John", age: 25 },
+            { name: "Emma", age: 30 },
+            { name: "Alex", age: 22 }
+        ];
+        let username = users.map(user => user.age)
+            console.log(username);
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

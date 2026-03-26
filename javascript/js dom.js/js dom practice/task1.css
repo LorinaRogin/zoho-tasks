@@ -1,0 +1,11 @@
+#card{
+    display: none;
+    background-color: lightblue;
+    padding: 20px;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.show{
+    display: block;
+}

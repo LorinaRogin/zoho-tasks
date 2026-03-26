@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .heading {
+            text-align: center;
+            margin: 0;
+            margin-top: 150px;
+        }
+
+        .container {
+            margin: 0%;
+            margin-top: 50px;
+            display: flex;
+            gap: 30px;
+        }
+
+        .frame {
+            margin: 0;
+            margin-inline-start: 10px;
+            margin-top: 10px;
+        }
+
+        .frame p {
+            margin-top: -15px;
+        }
+
+        .card {
+            flex: 1;
+            background-color: lavenderblush;
+            border-radius: 10px;
+            padding: 10px;
+
+        }
+
+        .card:first-child {
+            box-shadow: 0px 0px 10px 2px rgb(225, 110, 225);
+
+        }
+
+        .card:last-child {
+            box-shadow: 0px 0px 10px 2px rgb(53, 49, 169);
+
+        }
+
+        .card:nth-child(2) {
+            box-shadow: 0px 0px 10px 2px rgb(180, 243, 113);
+
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                margin-bottom: 20px;
+            }
+        }
+
+
+
+        span {
+            font-weight: bold;
+            color: blue;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <h2>What this means for your agency</h2>
+        <p>Stop being trapped in the reporting cycle. Focus on what actually grows your business.</p>
+    </div>
+    <section class="container">
+        <div class="card">
+            <div class="frame">
+                <span>10+</span>
+                <h3>Hours saved weekly</h3>
+                <p>No more manual reporting, screenshot
+                    gathering, or slide deck formatting.
+                    Automated dashboards handle everything.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="frame">
+                <span>3X</span>
+                <h3>Faster client onboarding</h3>
+                <p>Template dashboards and automated processes
+                    ensure new clients will get their analytics faster than ever.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="frame">
+                <span>10+</span>
+                <h3>Hours saved weekly</h3>
+                <p>No more manual reporting, screenshot
+                    gathering, or slide deck formatting.
+                    Automated dashboards handle everything.</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

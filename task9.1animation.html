@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            background-color: lightblue;
+            animation-name:move;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+        }
+ 
+
+
+@keyframes move {
+    0%{
+        transform: translate(0px, 0px) rotate(0deg);
+        background-color: lightblue;
+    }
+    25%{
+        transform: translate(100px ,0px) rotate(0deg);
+        background-color: lightblue;
+    }
+    50%{
+        transform: translate(100px,100px) rotate(0deg);
+        background-color:lightpink;
+    }
+    75%{
+        transform: translate(100px , 100px) rotate(0deg);
+        background-color:lightgreen;
+    }
+    100%{
+        transform: translate(100px,100px) rotate(180deg);
+        background-color: lightseagreen;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

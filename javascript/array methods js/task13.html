@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // concat
+        let arr1 = [1, 2, 3];
+        let arr2 = [4, 5, 6];
+        let result = arr1.concat(arr2);
+        console.log(result);
+        // slice
+        let numbers = [10, 20, 30, 40, 50];
+        let output = numbers.slice(1, 4);
+        console.log(output);
+        // splice
+        let num = [10, 20, 30, 40, 50];
+        let numoutput = num.splice(2, 1);
+        console.log(num);
+
+        let arr = [10, 20, 40, 50];
+        let arrsplice = arr.splice( 2, 0, 30);
+        console.log(arr);
+        console.log(arrsplice);
+
+        let arr3 = [5, 10, 15, 20, 25];
+        let arr3output = arr3.splice(1,2);
+        console.log(arr3); 
+
+        let arr4 = [5, 10, 15, 20];
+        let arr4output = arr4.splice(2 , 1, 100);
+        console.log(arr4);
+
+        // example challenge 
+        let frontend = ["HTML", "CSS", "Bootstrap", "React"];
+        let frontendresult = frontend.splice(2 , 1 , "Javascript");
+        console.log(frontend);
+
+        let fruits = ["Apple", "Mango", "Banana", "Orange"];
+        let fruitslist = fruits.splice(1,1,"Pineapple");
+        console.log(fruits);
+
+        let number = [10, 20, 30, 40, 50];
+        let numlist = number.splice(2 , 2 , 300 , 400);
+        console.log(number);
+
+        let tech = ["HTML", "CSS", "React", "Node"];
+        let techlist = tech.splice(2 , 1 , "JavaScript" , "Bootstrap");
+        console.log(tech);
+
+        let items = ["Pen", "Pencil", "Eraser", "Sharpener", "Scale"];
+        let itemslist = items.splice(1 , 2 , "Marker" , "Highlighter");
+        console.log(items);
+
+        let color = ["Red", "Blue", "Green", "Yellow", "Pink"];
+        let colorlist = color.splice(1 , 2 , "Purple" , "Orange" , "Black");
+        console.log(color);
+
+        let students = ["Arun", "Divya", "Karan", "Meena", "Rahul"];
+        let studentlist = students.splice(2, 1 , "Priya" , "Vikram");
+        console.log(students);
+
+        let cities = ["Chennai", "Mumbai", "Delhi", "Kolkata", "Bangalore"];
+        let citylist = cities.splice(1 , 2 , "Hyderabad" , "Pune");
+        console.log(cities);
+    </script>
+</body>
+
+</html>

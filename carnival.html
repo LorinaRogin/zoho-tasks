@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carnival Nights</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: #fff;
+            background: radial-gradient(circle at top, #ff9a9e 0, #f6416c 25%, #1a2a6c 70%, #000 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .sky {
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.5) 0, transparent 50%),
+                radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4) 0, transparent 55%);
+            mix-blend-mode: screen;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(2px 2px at 10% 20%, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 30% 70%, #fff, transparent),
+                radial-gradient(2px 2px at 60% 40%, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 80% 80%, #fff, transparent),
+                radial-gradient(2px 2px at 50% 10%, #fff, transparent);
+            opacity: 0.5;
+            animation: twinkle 6s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: translateY(0); }
+            100% { opacity: 0.8; transform: translateY(-10px); }
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(16px);
+            background: linear-gradient(90deg, rgba(0,0,0,0.65), rgba(0,0,0,0.4));
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-size: 0.85rem;
+        }
+
+        .logo-badge {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: conic-gradient(from 120deg, #facc15, #fb7185, #38bdf8, #facc15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #111827;
+            font-size: 0.7rem;
+            box-shadow: 0 0 0 2px rgba(15,23,42,0.9), 0 0 20px rgba(250,204,21,0.7);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.2rem;
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        nav a {
+            color: #e5e7eb;
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 0.2rem;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg,#f97316,#22c55e,#3b82f6);
+            border-radius: 999px;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 0.45rem 1rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg,#f97316,#facc15);
+            color: #111827;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 12px 30px rgba(248, 113, 113, 0.6);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 40px rgba(248, 113, 113, 0.8);
+        }
+
+        main {
+            position: relative;
+            z-index: 5;
+        }
+
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem 3rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-copy h1 {
+            font-size: clamp(2.4rem, 4vw, 3.4rem);
+            line-height: 1.05;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .hero-copy h1 span.highlight {
+            background: linear-gradient(120deg,#f97316,#fb7185,#eab308);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(248, 113, 113, 0.7);
+        }
+
+        .hero-sub {
+            margin-top: 0.9rem;
+            color: #e5e7eb;
+            max-width: 32rem;
+            font-size: 0.98rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 1.4rem;
+            font-size: 0.86rem;
+            color: #fbbf24;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+        }
+
+        .hero-actions {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            padding: 0.8rem 1.8rem;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg,#22c55e,#3b82f6);
+            color: #0f172a;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            box-shadow: 0 15px 30px rgba(59,130,246,0.6);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(59,130,246,0.8);
+        }
+
+        .btn-ghost {
+            padding: 0.8rem 1.4rem;
+            border-radius: 999px;
+            border: 1px solid rgba(248,250,252,0.4);
+            background: rgba(15,23,42,0.6);
+            color: #e5e7eb;
+            cursor: pointer;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .btn-ghost span.icon {
+            display: inline-flex;
+            width: 20px;
+            height: 20px;
+            border-radius: 999px;
+            border: 1px solid rgba(248,250,252,0.5);
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        .hero-badge-row {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            font-size: 0.75rem;
+        }
+
+        .chip {
+            padding: 0.3rem 0.6rem;
+            border-radius: 999px;
+            border: 1px solid rgba(248,250,252,0.4);
+            background: rgba(15,23,42,0.7);
+        }
+
+        .hero-visual {
+            position: relative;
+            min-height: 260px;
+            perspective: 900px;
+        }
+
+        .ferris {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            margin: 0 auto;
+            border: 6px solid rgba(248, 250, 252, 0.85);
+            box-shadow:
+                0 0 0 8px rgba(15,23,42,0.9),
+                0 30px 60px rgba(15,23,42,0.9);
+            background: radial-gradient(circle at 30% 20%, #fde68a, #fb7185 45%, #1d4ed8 90%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            animation: wheelGlow 6s ease-in-out infinite alternate, wheelTilt 9s ease-in-out infinite alternate;
+        }
+
+        @keyframes wheelGlow {
+            0% { box-shadow: 0 0 0 8px rgba(15,23,42,0.9), 0 20px 40px rgba(15,23,42,0.9); }
+            100% { box-shadow: 0 0 35px 10px rgba(251,191,36,0.5), 0 30px 70px rgba(15,23,42,1); }
+        }
+
+        @keyframes wheelTilt {
+            0% { transform: rotateX(14deg) rotateZ(0deg); }
+            50% { transform: rotateX(20deg) rotateZ(2deg); }
+            100% { transform: rotateX(16deg) rotateZ(-2deg); }
+        }
+
+        .ferris-inner {
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            border: 3px dashed rgba(248,250,252,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: rotateWheel 18s linear infinite;
+        }
+
+        @keyframes rotateWheel {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cabin {
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            border-radius: 12px;
+            background: linear-gradient(135deg,#22c55e,#a3e635);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #022c22;
+            box-shadow: 0 8px 18px rgba(34,197,94,0.8);
+        }
+
+        .cabin:nth-child(1) { top: -10px; left: 50%; transform: translateX(-50%); }
+        .cabin:nth-child(2) { top: 18%; right: -10px; transform: translateY(-50%); }
+        .cabin:nth-child(3) { bottom: 18%; right: -10px; transform: translateY(50%); }
+        .cabin:nth-child(4) { bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .cabin:nth-child(5) { bottom: 18%; left: -10px; transform: translateY(50%); }
+        .cabin:nth-child(6) { top: 18%; left: -10px; transform: translateY(-50%); }
+
+        .ticket-card {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            padding: 0.9rem 1.1rem;
+            border-radius: 18px;
+            background: rgba(15,23,42,0.9);
+            border: 1px dashed rgba(248,250,252,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.7rem;
+            box-shadow: 0 20px 50px rgba(15,23,42,1);
+        }
+
+        .ticket-info {
+            font-size: 0.78rem;
+        }
+
+        .ticket-info strong {
+            display: block;
+            font-size: 0.82rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .ticket-pill {
+            border-radius: 999px;
+            background: linear-gradient(135deg,#f97316,#facc15);
+            color: #111827;
+            font-weight: 700;
+            padding: 0.45rem 0.9rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .section-title {
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            font-size: 0.78rem;
+            color: #bfdbfe;
+            margin-bottom: 0.4rem;
+        }
+
+        .section-heading {
+            font-size: 1.7rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: rgba(15,23,42,0.9);
+            border-radius: 18px;
+            padding: 1.3rem 1.2rem 1.4rem;
+            border: 1px solid rgba(148,163,184,0.35);
+            box-shadow: 0 20px 40px rgba(15,23,42,0.95);
+            transform: translateY(16px);
+            opacity: 0;
+            animation: floatIn 0.9s ease-out forwards;
+        }
+
+        .card:nth-child(2) { animation-delay: 0.12s; }
+        .card:nth-child(3) { animation-delay: 0.24s; }
+
+        @keyframes floatIn {
+            0% { opacity: 0; transform: translateY(26px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #a5b4fc;
+            margin-bottom: 0.45rem;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #e5e7eb;
+            line-height: 1.5;
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.8rem;
+            font-size: 0.7rem;
+        }
+
+        .pill-row span {
+            padding: 0.18rem 0.55rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.5);
+        }
+
+        .tickets {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .ticket-options {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .ticket-tier {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.1rem;
+            border-radius: 16px;
+            background: rgba(15,23,42,0.95);
+            border: 1px solid rgba(148,163,184,0.45);
+        }
+
+        .ticket-tier strong {
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+
+        .ticket-tier small {
+            font-size: 0.78rem;
+            color: #cbd5f5;
+        }
+
+        .ticket-price {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #facc15;
+        }
+
+        form.booking {
+            background: rgba(15,23,42,0.95);
+            border-radius: 18px;
+            padding: 1.4rem 1.3rem 1.5rem;
+            border: 1px solid rgba(148,163,184,0.45);
+            box-shadow: 0 20px 40px rgba(15,23,42,0.95);
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .field-group label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #9ca3af;
+        }
+
+        .field-group input,
+        .field-group select {
+            padding: 0.55rem 0.7rem;
+            border-radius: 10px;
+            border: 1px solid rgba(148,163,184,0.7);
+            background: rgba(15,23,42,0.9);
+            color: #e5e7eb;
+            outline: none;
+            font-size: 0.86rem;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+        }
+
+        .field-group input:focus,
+        .field-group select:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59,130,246,0.5);
+            transform: translateY(-1px);
+        }
+
+        .booking-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.7rem;
+            font-size: 0.78rem;
+            color: #9ca3af;
+        }
+
+        .mini {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #9ca3af;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Carousel */
+        .carousel-section {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 2rem;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 22px;
+            border: 1px solid rgba(148,163,184,0.45);
+            background: radial-gradient(circle at top, rgba(248,250,252,0.08), rgba(15,23,42,0.96));
+            box-shadow: 0 30px 60px rgba(15,23,42,1);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            padding: 1.8rem 1.6rem 2rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 1.6rem;
+            align-items: center;
+        }
+
+        .carousel-slide h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .carousel-slide p {
+            font-size: 0.95rem;
+            color: #e5e7eb;
+            max-width: 30rem;
+        }
+
+        .carousel-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.8rem;
+            font-size: 0.7rem;
+        }
+
+        .carousel-tags span {
+            padding: 0.18rem 0.55rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.5);
+        }
+
+        .carousel-ride {
+            position: relative;
+            height: 200px;
+        }
+
+        .carousel-base {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            height: 18px;
+            border-radius: 999px;
+            background: radial-gradient(circle at top, #f97316, #7c2d12);
+            box-shadow: 0 16px 40px rgba(15,23,42,1);
+        }
+
+        .carousel-pole {
+            position: absolute;
+            bottom: 34px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 120px;
+            border-radius: 999px;
+            background: linear-gradient(180deg,#facc15,#fb7185);
+            box-shadow: 0 0 18px rgba(248,250,252,0.6);
+        }
+
+        .carousel-top {
+            position: absolute;
+            bottom: 130px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            height: 80px;
+            background: conic-gradient(from 220deg,#f97316,#facc15,#22c55e,#38bdf8,#a855f7,#f97316);
+            clip-path: polygon(50% 0, 100% 100%, 0 100%);
+            box-shadow: 0 20px 40px rgba(15,23,42,0.9);
+        }
+
+        .carousel-horses {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 22px;
+            padding-bottom: 40px;
+            animation: horseWave 3.5s ease-in-out infinite;
+        }
+
+        @keyframes horseWave {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-10px); }
+        }
+
+        .horse {
+            width: 52px;
+            height: 52px;
+            border-radius: 18px;
+            background: linear-gradient(135deg,#22c55e,#a3e635);
+            box-shadow: 0 12px 30px rgba(34,197,94,0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .horse::before,
+        .horse::after {
+            content: "";
+            position: absolute;
+            border-radius: 999px;
+            background: rgba(15,23,42,0.18);
+        }
+
+        .horse::before {
+            width: 100%;
+            height: 12px;
+            bottom: 9px;
+            left: 0;
+        }
+
+        .horse::after {
+            width: 20px;
+            height: 20px;
+            top: 8px;
+            right: 6px;
+        }
+
+        .horse-bar {
+            position: absolute;
+            width: 8px;
+            height: 70px;
+            background: linear-gradient(180deg,#f9fafb,#e5e7eb);
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -8px;
+        }
+
+        .horse:nth-child(1) { transform: translateY(6px); }
+        .horse:nth-child(2) { transform: translateY(-6px); }
+        .horse:nth-child(3) { transform: translateY(4px); }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.8rem 0 0.4rem;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: rgba(148,163,184,0.5);
+            cursor: pointer;
+            transition: background 0.25s ease, transform 0.25s ease;
+        }
+
+        .carousel-dot.active {
+            background: #facc15;
+            transform: scale(1.3);
+            box-shadow: 0 0 12px rgba(250,204,21,0.9);
+        }
+
+        .carousel-nav {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .carousel-btn {
+            pointer-events: auto;
+            width: 34px;
+            height: 34px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.6);
+            background: rgba(15,23,42,0.85);
+            color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin: 0 0.8rem;
+            font-size: 1rem;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(30,64,175,0.95);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.8rem;
+        }
+
+        .gallery-tile {
+            position: relative;
+            padding-top: 70%;
+            border-radius: 16px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 14px 30px rgba(15,23,42,0.9);
+            transform: translateY(12px);
+            opacity: 0;
+            animation: floatIn 0.9s ease-out forwards;
+        }
+
+        .gallery-tile:nth-child(1) { animation-delay: 0.05s; }
+        .gallery-tile:nth-child(2) { animation-delay: 0.12s; }
+        .gallery-tile:nth-child(3) { animation-delay: 0.19s; }
+        .gallery-tile:nth-child(4) { animation-delay: 0.26s; }
+
+        .gallery-tile::after {
+            content: attr(data-label);
+            position: absolute;
+            left: 0.7rem;
+            bottom: 0.6rem;
+            padding: 0.18rem 0.55rem;
+            border-radius: 999px;
+            background: rgba(15,23,42,0.8);
+            border: 1px solid rgba(248,250,252,0.4);
+            font-size: 0.7rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .gallery-1 { background-image: linear-gradient(135deg,#f97316,#fb7185); }
+        .gallery-2 { background-image: linear-gradient(135deg,#38bdf8,#6366f1); }
+        .gallery-3 { background-image: linear-gradient(135deg,#22c55e,#a3e635); }
+        .gallery-4 { background-image: linear-gradient(135deg,#facc15,#f97316); }
+
+        footer {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 2.5rem;
+            font-size: 0.8rem;
+            color: #9ca3af;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            border-top: 1px solid rgba(148,163,184,0.3);
+        }
+
+        footer span {
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+        }
+
+        footer a {
+            color: #e5e7eb;
+            text-decoration: none;
+            margin-left: 0.9rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+                text-align: center;
+            }
+
+            .hero-copy {
+                order: 1;
+            }
+
+            .hero-visual {
+                order: 0;
+            }
+
+            .hero-meta,
+            .hero-badge-row,
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .tickets {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .carousel-slide {
+                grid-template-columns: minmax(0, 1fr);
+                text-align: center;
+            }
+
+            .carousel-ride {
+                margin-top: 1rem;
+            }
+        }
+
+        @media (max-width: 720px) {
+            nav ul {
+                display: none;
+            }
+
+            .grid-3 {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sky"></div>
+    <div class="stars"></div>
+
+    <header>
+        <div class="nav">
+            <div class="logo">
+                <div class="logo-badge">CN</div>
+                <span>Carnival Nights</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#attractions">Attractions</a></li>
+                    <li><a href="#tickets">Tickets</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </nav>
+            <button class="nav-cta" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})">
+                Book Pass
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <h1>
+                    Welcome to the
+                    <span class="highlight">Midnight Carnival</span>
+                </h1>
+                <p class="hero-sub">
+                    Neon lights, swirling wheels, laughter in the air. Step into a night where every ride, every flavor, and every firework feels a little bit unreal.
+                </p>
+                <div class="hero-meta">
+                    <span>3 Nights Only</span>
+                    <span>Waterfront Grounds</span>
+                    <span>Gates 6 PM – 1 AM</span>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})">
+                        Get Magic Pass
+                    </button>
+                    <button class="btn-ghost" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+                        <span class="icon">▶</span>
+                        Preview the night
+                    </button>
+                </div>
+                <div class="hero-badge-row">
+                    <span class="chip">Unlimited rides</span>
+                    <span class="chip">Fireworks every hour</span>
+                    <span class="chip">Street food lane</span>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="ferris">
+                    <div class="ferris-inner">
+                        <div class="cabin">A1</div>
+                        <div class="cabin">B2</div>
+                        <div class="cabin">C3</div>
+                        <div class="cabin">D4</div>
+                        <div class="cabin">E5</div>
+                        <div class="cabin">F6</div>
+                    </div>
+                </div>
+                <div class="ticket-card">
+                    <div class="ticket-info">
+                        <strong>Tonight only</strong>
+                        Golden Hour entry + free popcorn with every Magic Pass.
+                    </div>
+                    <div class="ticket-pill">₹799</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="attractions">
+            <p class="section-title">Attractions</p>
+            <h2 class="section-heading">A little wonder in every corner.</h2>
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-tag">Rides</div>
+                    <h3>Skyline Wheel</h3>
+                    <p>
+                        Float above a river of lights as the wheel turns slowly over the fairgrounds. Every seat is framed in neon, every rotation a new skyline.
+                    </p>
+                    <div class="pill-row">
+                        <span>Panoramic view</span>
+                        <span>Couple pods</span>
+                        <span>Photo moments</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-tag">Thrill</div>
+                    <h3>Comet Coaster</h3>
+                    <p>
+                        A streak of color in the dark: dive, twist, and loop through tunnels of sound and light synced to a live DJ set.
+                    </p>
+                    <div class="pill-row">
+                        <span>High-speed loops</span>
+                        <span>Light tunnels</span>
+                        <span>Live DJ</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-tag">Street magic</div>
+                    <h3>Lantern Lane</h3>
+                    <p>
+                        Stroll between floating lanterns, jugglers, illusionists, and candy floss clouds. The slow side of the carnival glow.
+                    </p>
+                    <div class="pill-row">
+                        <span>Live acts</span>
+                        <span>Food stalls</span>
+                        <span>Family-friendly</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="carousel-section" id="rides">
+            <p class="section-title">Carousel</p>
+            <h2 class="section-heading">Spin through the glow.</h2>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="rideTrack">
+                    <div class="carousel-slide">
+                        <div>
+                            <h3>Moonlit Carousel</h3>
+                            <p>
+                                Classic horses, new colors. The Moonlit Carousel glides in slow circles while a halo of bulbs fades from pink to gold to electric blue.
+                            </p>
+                            <div class="carousel-tags">
+                                <span>Family favorite</span>
+                                <span>Soft music</span>
+                                <span>Photo-perfect</span>
+                            </div>
+                        </div>
+                        <div class="carousel-ride">
+                            <div class="carousel-base"></div>
+                            <div class="carousel-pole"></div>
+                            <div class="carousel-top"></div>
+                            <div class="carousel-horses">
+                                <div class="horse">
+                                    <div class="horse-bar"></div>
+                                </div>
+                                <div class="horse">
+                                    <div class="horse-bar"></div>
+                                </div>
+                                <div class="horse">
+                                    <div class="horse-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div>
+                            <h3>Firefly Carousel</h3>
+                            <p>
+                                Lantern-lit seats drift under strings of tiny lights that feel like a cloud of fireflies frozen in mid-air.
+                            </p>
+                            <div class="carousel-tags">
+                                <span>Lantern glow</span>
+                                <span>Evening only</span>
+                                <span>Gentle spin</span>
+                            </div>
+                        </div>
+                        <div class="carousel-ride">
+                            <div class="carousel-base"></div>
+                            <div class="carousel-pole"></div>
+                            <div class="carousel-top" style="filter:hue-rotate(40deg);"></div>
+                            <div class="carousel-horses">
+                                <div class="horse" style="background:linear-gradient(135deg,#38bdf8,#6366f1);">
+                                    <div class="horse-bar"></div>
+                                </div>
+                                <div class="horse" style="background:linear-gradient(135deg,#f97316,#facc15);">
+                                    <div class="horse-bar"></div>
+                                </div>
+                                <div class="horse" style="background:linear-gradient(135deg,#22c55e,#16a34a);">
+                                    <div class="horse-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div>
+                            <h3>Starlight Spinners</h3>
+                            <p>
+                                Mini teacup-style pods that twirl under a spinning star disc, perfect for friends who want just a little chaos.
+                            </p>
+                            <div class="carousel-tags">
+                                <span>Friends zone</span>
+                                <span>Spin control</span>
+                                <span>Glow pods</span>
+                            </div>
+                        </div>
+                        <div class="carousel-ride">
+                            <div class="carousel-base"></div>
+                            <div class="carousel-pole"></div>
+                            <div class="carousel-top" style="filter:hue-rotate(210deg);"></div>
+                            <div class="carousel-horses">
+                                <div class="horse" style="border-radius: 50%;">
+                                    <div class="horse-bar"></div>
+                                </div>
+                                <div class="horse" style="border-radius: 50%; transform: translateY(-4px);">
+                                    <div class="horse-bar"></div>
+                                </div>
+                                <div class="horse" style="border-radius: 50%;">
+                                    <div class="horse-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" id="ridePrev" type="button">&#8249;</button>
+                    <button class="carousel-btn" id="rideNext" type="button">&#8250;</button>
+                </div>
+            </div>
+            <div class="carousel-dots" id="rideDots">
+                <div class="carousel-dot active" data-index="0"></div>
+                <div class="carousel-dot" data-index="1"></div>
+                <div class="carousel-dot" data-index="2"></div>
+            </div>
+        </section>
+
+        <section id="tickets">
+            <p class="section-title">Tickets</p>
+            <h2 class="section-heading">Choose your kind of night.</h2>
+            <div class="tickets">
+                <div class="ticket-options">
+                    <div class="ticket-tier">
+                        <div>
+                            <strong>Twilight Pass</strong>
+                            <small>Entry 6 PM – 9 PM • 5 ride credits</small>
+                        </div>
+                        <div class="ticket-price">₹499</div>
+                    </div>
+                    <div class="ticket-tier">
+                        <div>
+                            <strong>Magic Pass</strong>
+                            <small>Unlimited rides • Priority gate • Show seating</small>
+                        </div>
+                        <div class="ticket-price">₹799</div>
+                    </div>
+                    <div class="ticket-tier">
+                        <div>
+                            <strong>Midnight Crew</strong>
+                            <small>Group of 4 • After 9 PM • DJ zone access</small>
+                        </div>
+                        <div class="ticket-price">₹2599</div>
+                    </div>
+                </div>
+                <form class="booking" onsubmit="event.preventDefault(); alert('Your carnival night is reserved!');">
+                    <p class="mini">Fast booking</p>
+                    <div class="field-group">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" placeholder="Your full name" required />
+                    </div>
+                    <div class="field-group">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" placeholder="you@example.com" required />
+                    </div>
+                    <div class="field-group">
+                        <label for="passType">Pass type</label>
+                        <select id="passType" required>
+                            <option value="">Select your pass</option>
+                            <option>Twilight Pass</option>
+                            <option>Magic Pass</option>
+                            <option>Midnight Crew</option>
+                        </select>
+                    </div>
+                    <div class="field-group">
+                        <label for="date">Visit date</label>
+                        <input id="date" type="date" required />
+                    </div>
+                    <div class="booking-footer">
+                        <span>Instant email confirmation • Pay at gate</span>
+                        <button type="submit" class="btn-primary">Reserve spot</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <p class="section-title">Gallery</p>
+            <h2 class="section-heading">Little snapshots of big nights.</h2>
+            <div class="gallery-grid">
+                <div class="gallery-tile gallery-1" data-label="Ferris lights"></div>
+                <div class="gallery-tile gallery-2" data-label="Coaster blur"></div>
+                <div class="gallery-tile gallery-3" data-label="Candy lane"></div>
+                <div class="gallery-tile gallery-4" data-label="Skyline show"></div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            const track = document.getElementById("rideTrack");
+            const dotsContainer = document.getElementById("rideDots");
+            if (!track || !dotsContainer) return;
+
+            const slides = Array.from(track.children);
+            const dots = Array.from(dotsContainer.children);
+            let current = 0;
+            let timerId;
+
+            function goToSlide(index) {
+                current = (index + slides.length) % slides.length;
+                const offset = -current * 100;
+                track.style.transform = "translateX(" + offset + "%)";
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle("active", i === current);
+                });
+            }
+
+            function nextSlide() {
+                goToSlide(current + 1);
+            }
+
+            function startAuto() {
+                stopAuto();
+                timerId = setInterval(nextSlide, 5000);
+            }
+
+            function stopAuto() {
+                if (timerId) {
+                    clearInterval(timerId);
+                    timerId = null;
+                }
+            }
+
+            document.getElementById("rideNext")?.addEventListener("click", () => {
+                stopAuto();
+                nextSlide();
+                startAuto();
+            });
+
+            document.getElementById("ridePrev")?.addEventListener("click", () => {
+                stopAuto();
+                goToSlide(current - 1);
+                startAuto();
+            });
+
+            dots.forEach(dot => {
+                dot.addEventListener("click", () => {
+                    const idx = parseInt(dot.getAttribute("data-index") || "0", 10);
+                    stopAuto();
+                    goToSlide(idx);
+                    startAuto();
+                });
+            });
+
+            startAuto();
+        })();
+    </script>
+
+    <footer>
+        <span>Carnival Nights</span>
+        <div>
+            <a href="#tickets">Tickets</a>
+            <a href="#attractions">Attractions</a>
+            <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Layout</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex; /* LEVEL 1: Sidebar + Right Section */
+        font-family: Arial, sans-serif;
+    }
+
+    /* ===== Sidebar ===== */
+    .sidebar {
+        width: 220px;
+        background: #111;
+        color: white;
+        padding: 20px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sidebar li {
+        cursor: pointer;
+    }
+
+    .sidebar li:hover {
+        background: #222;
+        padding: 5px;
+    }
+
+    /* ===== Right Section ===== */
+    .right-section {
+        flex: 1; /* Takes remaining width */
+        display: flex;
+        flex-direction: column; /* LEVEL 2: Header + Main stacked */
+    }
+
+    /* ===== Header ===== */
+    .header {
+        height: 70px;
+        background: #f4f4f4;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* ===== Main Area ===== */
+    .main {
+        flex: 1; /* Takes remaining height */
+        padding: 20px;
+        background: #fafafa;
+    }
+
+    /* ===== Card Container ===== */
+    .card-container {
+        display: flex; /* LEVEL 3: Cards layout */
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    /* ===== Cards ===== */
+    .card {
+        flex: 1 1 250px; /* Grow, shrink, base width 250px */
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+</style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <ul>
+            <li>Dashboard</li>
+            <li>Users</li>
+            <li>Settings</li>
+        </ul>
+    </div>
+
+    <div class="right-section">
+
+        <div class="header">
+            <h2>Header Area</h2>
+        </div>
+
+        <div class="main">
+            <div class="card-container">
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+                <div class="card">Card 6</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
