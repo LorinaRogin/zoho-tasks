@@ -68,3 +68,4 @@ To verify CI is working with a repo variable:
 The UI fetches `./variables.json`. Browsers often block `fetch()` when opening files directly via `file://`,
 so we run a local HTTP server (Express) to serve the files correctly over `http://`.
 
+CI trigger
