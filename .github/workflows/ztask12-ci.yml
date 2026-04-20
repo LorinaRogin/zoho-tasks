@@ -1,0 +1,35 @@
+name: ztask12-ci
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "ztask12/**"
+      - ".github/workflows/ztask12-ci.yml"
+  pull_request:
+    paths:
+      - "ztask12/**"
+      - ".github/workflows/ztask12-ci.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ztask12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: npm
+          cache-dependency-path: ztask12/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Build variables JSON
+        run: npm run build:variables
