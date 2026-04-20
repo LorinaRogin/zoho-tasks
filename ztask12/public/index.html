@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Variable Explorer</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">Variable Explorer</div>
+      <p class="sidebarText">
+        Explore theme variables by mode and category.
+        Double-click a variable name to copy.
+      </p>
+    </aside>
+
+    <main class="main">
+      <header class="header">
+        <h1 class="title">Zoho Theme Variables</h1>
+        <p class="subtitle">Search and filter colors quickly without scanning 2000+ lines.</p>
+      </header>
+
+      <section class="controlCard">
+        <div class="controls">
+          <input
+            id="searchInput"
+            class="search"
+            type="text"
+            placeholder="Search variable, value, selector..."
+            autocomplete="off"
+          />
+
+          <div class="dropdown" id="categoryDropdown">
+            <button id="categoryBtn" class="dropdownBtn" type="button" aria-expanded="false">
+              All categories
+              <span class="caret">▾</span>
+            </button>
+            <ul id="categoryMenu" class="dropdownMenu" hidden></ul>
+          </div>
+
+          <button id="clearBtn" class="btn" type="button">Clear</button>
+        </div>
+
+        <!-- Tabs below filter section -->
+        <div class="modeTabs" id="modeTabs">
+          <button class="modeTab active" data-mode="base" type="button">Base</button>
+          <button class="modeTab" data-mode="light_mode" type="button">Light</button>
+          <button class="modeTab" data-mode="dark_mode" type="button">Dark</button>
+          <button class="modeTab" data-mode="night_mode" type="button">Night</button>
+         
+        </div>
+
+        <div class="activeScope" id="activeScope">Mode: Base | Category: All</div>
+      </section>
+
+      <section class="tableCard">
+        <div class="tableTop">
+          <div id="resultCount" class="count">0 results</div>
+          <div class="tip">Double-click variable name to copy</div>
+        </div>
+
+        <div class="tableWrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Variable</th>
+                <th>Color Value</th>
+                <th>Preview</th>
+              </tr>
+            </thead>
+            <tbody id="colorsBody"></tbody>
+          </table>
+        </div>
+
+        <p id="noResults" class="noResults" hidden>No matching variables found.</p>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" hidden>Copied!</div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

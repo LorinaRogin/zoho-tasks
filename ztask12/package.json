@@ -1,0 +1,16 @@
+{
+  "name": "variable-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zoho theme variable explorer (static UI served by Express)",
+  "scripts": {
+    "start": "node server.js",
+    "build:variables": "node build-variables-json.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
