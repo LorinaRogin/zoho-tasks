@@ -97,8 +97,6 @@ function ensure(obj, keys) {
 }
 
 // ---------- parse ----------
-const pipelineTestMessage = process.env.PIPELINE_TEST_MESSAGE;
-
 const result = {
   source: "Untitled.cs",
   generated_at: new Date().toISOString(),
@@ -113,14 +111,6 @@ const result = {
   },
   modes: {}
 };
-
-if (pipelineTestMessage) {
-  result.ci = {
-    pipeline_test_message: String(pipelineTestMessage),
-    github_run_id: process.env.GITHUB_RUN_ID || null,
-    github_sha: process.env.GITHUB_SHA || null
-  };
-}
 
 // stack to track current selector blocks
 const selectorStack = [];

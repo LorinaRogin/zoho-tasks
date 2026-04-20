@@ -1,0 +1,254 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoho task 2</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .content-wrap {
+            width: 90%;
+            max-width: 1240px;
+            margin: auto;
+            position: relative;
+            
+        }
+
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .nav {
+            padding-inline: 30px;
+            padding-block: 10px;
+        }
+
+        .nav img {
+            width: 150px;
+        }
+
+        .banner {
+            background-image: url(bannertask2.png);
+            padding: 100px 100px;
+        }
+
+        .banner .content-wrap {
+            display: flex;
+        }
+
+        span {
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        .text h1 span {
+            font-size: 35px;
+            background: linear-gradient(to right, #FE95B0, #FFDDB2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            background: linear-gradient(to bottom right, rgb(245, 200, 236), rgb(237, 206, 237), rgb(244, 244, 206), rgb(196, 196, 247));
+        }
+
+        .container h4 {
+            margin: 0%;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .content-wrapper {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    @media (max-width: 600px) {
+
+    .card1,
+    .card2,
+    .card3 {
+        width: 100%;
+    }
+
+    .content-wrapper {
+        justify-content: center;
+    }
+
+    .banner {
+        padding: 40px 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    span {
+        font-size: 20px;
+    }
+}
+
+        
+
+        .card1 {
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid blue;
+            padding: 30px;
+            position: relative;
+            width: calc(49% - 100px);
+            display: flex;
+            justify-content: center;
+            min-height: 80px;
+        }
+
+        .card1 img {
+            width: 150px;
+
+        }
+
+        .card2,.card3 {
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid blue;
+            padding: 30px;
+            position: relative;
+            width: calc(25.3% - 100px);
+            display: flex;
+            justify-content: center;
+            min-height: 80px;
+            align-items: center;
+        }
+
+        .card2 img {
+            width: 60px;
+        }
+        .card3 img {
+            width: 60px;
+        }
+
+
+        .box-one {
+            background-color: goldenrod;
+            position: absolute;
+            top: 0px;
+            right: 15px;
+            padding: 10px;
+        }
+
+        @media (max-width: 992px) {
+
+            .card1,
+            .card2,
+            .card3 {
+                width: calc(50% - 100px);
+            }
+
+            .banner .content-wrap {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .card1,
+            .card2,
+            .card3 {
+                width: 50%;
+            }
+
+            .content-wrapper {
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            span {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <img src="ZA.png" width="200px">
+    </nav>
+    <div class="banner">
+        <div class="content-wrap">
+            <div class="text">
+                <span>Penny for your thoughts?</span>
+                <h1> Literally, share your experience and claim <span> $25 gift card!!</span></h1>
+            </div>
+            <div class="banner-img">
+                <img src="banner image task 2.png">
+            </div>
+        </div>
+    </div>
+    <main class="container">
+        <div class="content-wrap">
+            <h4>Choose your preferred review platform</h4>
+            <h5>Product Directories</h5>
+            <section class="content-wrapper">
+                <div class="card1">
+                    <div class="box-one">Get
+                        $25</div>
+                    <img src="image 1.png">
+                </div>
+                <div class="card1">
+                    <div class="box-one">Get
+                        $25</div>
+                    <img src="image 2.png">
+                </div>
+            </section>
+            <h5>Product Directories</h5>
+            <section class="content-wrapper">
+                <div class="card2">
+                    <img src="image 3.png">
+                </div>
+                <div class="card2">
+                    <img src="image 4.png">
+                </div>
+                <div class="card2">
+                    <img src="image 5.png">
+                </div>
+                <div class="card2">
+                    <img src="image 6.png">
+                </div>
+            </section>
+            <h5>Marketplace</h5>
+            <section class="content-wrapper">
+                <div class="card3">
+                    <img src="image 7.png">
+                </div>
+                <div class="card3">
+                    <img src="image 8.png">
+                </div>
+                <div class="card3">
+                    <img src="image 9.png">
+                </div>
+                <div class="card3">
+                    <img src="image 10.png">
+                </div>
+                <div class="card3">
+                    <img src="image 11.png">
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+</body></html>
