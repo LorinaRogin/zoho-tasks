@@ -33,3 +33,6 @@ jobs:
 
       - name: Build variables JSON
         run: npm run build:variables
+
+      - name: Print pipeline test variable
+        run: echo "PIPELINE_TEST_MESSAGE=${{ vars.PIPELINE_TEST_MESSAGE }}"
