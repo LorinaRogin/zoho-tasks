@@ -69,3 +69,4 @@ The UI fetches `./variables.json`. Browsers often block `fetch()` when opening f
 so we run a local HTTP server (Express) to serve the files correctly over `http://`.
 
 CI trigger
+CI trigger 2
